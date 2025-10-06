@@ -20,11 +20,11 @@ const PORT = process.env.PORT || 4000;
 database.connect();
 //middlewares
 app.use(express.json());
-app.use(cookieParser());
-app.use(
+app.use(cookieParser()); 
+app.use(		
 	cors({
-		origin:"https://study-monk-client.vercel.app",
-		//origin:"http://localhost:3001",
+		// origin:"https://study-monk-client.vercel.app",
+		origin:"http://localhost:3000",
 		credentials:true,
 	})
 )
@@ -58,3 +58,4 @@ app.listen(PORT, () => {
 	console.log(`App is running at ${PORT}`)
 })
 
+//mongodb+srv://soumenmandal0008:root@cluster0.wx9xp.mongodb.net/study4monk

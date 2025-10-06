@@ -166,7 +166,7 @@ exports.login = async (req, res) => {
     } else {
       return res.status(401).json({
         success: false,
-        message: `Password is incorrect`,
+        message: `Password is incorrect`
       })
     }
   } catch (error) {
@@ -259,7 +259,6 @@ exports.changePassword = async (req, res) => {
       { password: encryptedPassword },
       { new: true }
     )
-
     // Send notification email
     try {
       const emailResponse = await mailSender(
